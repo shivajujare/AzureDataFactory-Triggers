@@ -1,0 +1,44 @@
+{
+	"name": "ds_order_items",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blob_order_items",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "blob-storage"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "order_items.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}

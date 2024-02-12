@@ -1,5 +1,5 @@
 {
-	"name": "adls_orders",
+	"name": "adls_order_items",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "adls_account",
