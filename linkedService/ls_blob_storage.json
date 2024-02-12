@@ -1,0 +1,17 @@
+{
+	"name": "ls_blob_storage",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "kv_week21",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blob-storage-account-constring"
+			}
+		}
+	}
+}
