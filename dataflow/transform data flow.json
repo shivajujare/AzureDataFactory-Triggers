@@ -6,18 +6,68 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "adls_orders",
+						"referenceName": "adls_order_items",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "adls_orders",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				},
+				{
+					"name": "join1"
+				},
+				{
+					"name": "select1"
+				}
+			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          order_item_id as string,",
+				"          order_item_order_id as string,",
+				"          order_item_product_id as string,",
+				"          order_item_quantity as string,",
+				"          order_item_subtotal as float,",
+				"          order_item_product_price as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source(output(",
+				"          order_id as string,",
+				"          order_date as string,",
+				"          order_customer_id as string,",
+				"          order_status as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source1 aggregate(groupBy(order_item_order_id),",
+				"     order_item_subtotal = sum(order_item_subtotal)) ~> aggregate1",
+				"aggregate1, source2 join(order_item_order_id == order_id,",
+				"     joinType:'outer',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 select(mapColumn(",
+				"          order_id,",
+				"          order_date,",
+				"          customer_id = order_customer_id,",
+				"          order_status,",
+				"          order_amount = order_item_subtotal",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
