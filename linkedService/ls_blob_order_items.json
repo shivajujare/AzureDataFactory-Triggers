@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://saadfweek21.blob.core.windows.net/input",
+			"url": "https://saadfweek21.blob.core.windows.net/input/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
