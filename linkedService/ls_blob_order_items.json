@@ -1,0 +1,12 @@
+{
+	"name": "ls_blob_order_items",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://saadfweek21.blob.core.windows.net",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
