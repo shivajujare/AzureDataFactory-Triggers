@@ -1,0 +1,40 @@
+{
+	"name": "adls_orders",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_account",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"adls_orders_folder": {
+				"type": "string"
+			},
+			"adls_orders_fname": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "adls-storage"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().adls_orders_fname",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().adls_orders_folder",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
