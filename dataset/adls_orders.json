@@ -5,14 +5,6 @@
 			"referenceName": "adls_account",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"adls_orders_folder": {
-				"type": "string"
-			},
-			"adls_orders_fname": {
-				"type": "string"
-			}
-		},
 		"folder": {
 			"name": "adls-storage"
 		},
@@ -21,14 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().adls_orders_fname",
-					"type": "Expression"
-				},
-				"container": {
-					"value": "@dataset().adls_orders_folder",
-					"type": "Expression"
-				}
+				"container": "input"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

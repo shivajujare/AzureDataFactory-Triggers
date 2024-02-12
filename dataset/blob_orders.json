@@ -5,14 +5,6 @@
 			"referenceName": "ls_blob_storage",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"blob_orders_folder": {
-				"type": "string"
-			},
-			"blob_orders_fname": {
-				"type": "string"
-			}
-		},
 		"folder": {
 			"name": "blob-storage"
 		},
@@ -21,20 +13,27 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().blob_orders_fname",
-					"type": "Expression"
-				},
-				"container": {
-					"value": "@dataset().blob_orders_folder",
-					"type": "Expression"
-				}
+				"fileName": "orders.csv",
+				"container": "input"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
+			"firstRowAsHeader": false,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
 	}
 }
