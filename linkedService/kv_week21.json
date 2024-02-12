@@ -1,0 +1,10 @@
+{
+	"name": "kv_week21",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-week21.vault.azure.net/"
+		}
+	}
+}
