@@ -1,0 +1,9 @@
+{
+	"name": "ADF-week21-triggers",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "61292dcb-74e1-4865-a5b6-7e80d39db740",
+		"tenantId": "ba1b0bed-5b3e-4a44-8262-436ffcfc847d"
+	}
+}

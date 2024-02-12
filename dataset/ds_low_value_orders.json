@@ -1,0 +1,26 @@
+{
+	"name": "ds_low_value_orders",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_gen2_account",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "adls-storage"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "low_value_orders",
+				"fileSystem": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
