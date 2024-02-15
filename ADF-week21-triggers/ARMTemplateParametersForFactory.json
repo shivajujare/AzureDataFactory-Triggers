@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-week21-triggers"
+		},
+		"adls_gen2_account_accountKey": {
+			"value": ""
+		},
+		"adls_account_properties_typeProperties_connectionString_secretName": {
+			"value": "adls-storage-account-constring"
+		},
+		"adls_gen2_account_properties_typeProperties_url": {
+			"value": "https://adlsweek212.dfs.core.windows.net/"
+		},
+		"kv_week21_properties_typeProperties_baseUrl": {
+			"value": "https://kv-week21-adf.vault.azure.net/"
+		},
+		"ls_blob_order_items_properties_typeProperties_url": {
+			"value": "https://sablobadf.blob.core.windows.net/orderitems/"
+		},
+		"ls_blob_storage_properties_typeProperties_connectionString_secretName": {
+			"value": "blob-storage-account-constring"
+		},
+		"order_triggers_properties_typeProperties_scope": {
+			"value": "/subscriptions/f320e263-75fd-4b5b-906b-369f2ba80f6c/resourceGroups/rg-adf-week21/providers/Microsoft.Storage/storageAccounts/sablobadf"
+		}
+	}
+}
