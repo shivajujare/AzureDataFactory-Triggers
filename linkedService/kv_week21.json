@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "https://kv-week21.vault.azure.net/"
+			"baseUrl": "https://kv-week21-adf.vault.azure.net/"
 		}
 	}
 }
