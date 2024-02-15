@@ -34,6 +34,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ingest_order_items",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true
 				}
 			},
